@@ -1,0 +1,30 @@
+db:
+  container_name: mezz-db
+  image: postgres:9.4
+web:
+  container_name: mezz-web
+  build: ./basebuild
+  environment:
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_USER: postgres
+    #PGDATA: /var/lib/postgresql/data
+    POSTGRES_DB: postgres
+  volumes:
+    - /home/stealey/pam-web/lucid:/home/docker/lucid
+    - /var/run
+  ports:
+    - "8000:8000"
+    - "1338:22"
+  links:
+    - db:db
+  command: /bin/bash init-web
+nginx:
+  container_name: mezz-nginx
+  image: nginx:1.9
+  volumes_from:
+    - web
+  ports:
+    - "80:80"
+    - "443:443"
+  links:
+    - web:web
