@@ -4,6 +4,6 @@ docker-compose build
 docker-compose up -d
 docker exec mezz-web python manage.py collectstatic --noinput
 docker exec mezz-web python manage.py migrate
-lucid/init-nginx
+pamweb/init-nginx
 
 exit 0;

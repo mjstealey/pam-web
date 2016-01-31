@@ -23,8 +23,8 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 RUN useradd -m docker
 RUN echo docker:docker | chpasswd
 
-ADD . /home/docker/lucid
-WORKDIR /home/docker/lucid
+ADD . /home/docker/pamweb
+WORKDIR /home/docker/pamweb
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
