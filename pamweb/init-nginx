@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker exec -ti mezz-nginx cp /home/docker/pamweb/nginx.conf /etc/nginx/conf.d/default.conf
-docker exec -ti mezz-nginx nginx -s reload
+docker exec -ti pam-nginx cp /home/docker/pamweb/nginx.conf /etc/nginx/conf.d/default.conf
+docker exec -ti pam-nginx nginx -s reload
 
 exit 0;
