@@ -4,6 +4,8 @@ docker-compose build
 docker-compose up -d
 docker exec pam-web python manage.py collectstatic --noinput
 docker exec pam-web python manage.py migrate
+docker exec pam-web python manage.py loaddata json-data/admin-user.json
+docker exec pam-web python manage.py loaddata json-data/default-site.json
 pamweb/init-nginx
 
 exit 0;

@@ -3,5 +3,5 @@
 sleep 3s
 /usr/sbin/sshd
 #python manage.py runserver 0.0.0.0:8000
-uwsgi --ini uwsgi.ini
+uwsgi --ini emperor.ini
 

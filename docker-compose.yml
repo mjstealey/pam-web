@@ -12,6 +12,7 @@ web:
   volumes:
     - /home/stealey/pam-web/pamweb:/home/docker/pamweb
     - /var/run
+    - /home/stealey/pam-web/pamweb/log:/var/log/pamweb
   ports:
     - "8000:8000"
     - "1338:22"

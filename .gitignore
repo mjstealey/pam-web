@@ -1,3 +1,4 @@
 .DS_Store
 .idea/
 pamweb/static
+pamweb/log
